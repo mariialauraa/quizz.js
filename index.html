@@ -10,13 +10,14 @@
 <body>
     <h1 id="main-title">Quizz de Programação</h1>
     <!-- SCORE BOARD -->
-    <div id="score-container">
+    <div id="score-container" class="hide">
+        <h2>Parabéns!</h2>
         <p id="display-score"><span>90</span>%</p>
         <p>
-            Você acertou <span id="correct-answer">0</span> de 
+            Você acertou <span id="correct-answers">0</span> de 
             <span id="questions-qty">3</span> perguntas
         </p>
-        <button id="restart">Refazer quizz!</button>
+        <button id="btn-restart">Refazer quizz!</button>
     </div>
     <!-- QUIZZ CONTAINER -->
     <div id="quizz-container">
@@ -25,11 +26,11 @@
             <span id="question-text">Qual é a unidade de medida para metros?</span>
         </p>
         <div id="answers-box">
-            <button class="correct-answer">
+            <button>
                 <span class="btn-letter">a</span> 
                 <span class="question-answer">m</span>
             </button>
-            <button class="wrong-answer">
+            <button>
                 <span class="btn-letter">b</span> 
                 <span class="question-answer">km</span>
             </button>
@@ -44,7 +45,7 @@
         </div>
 
         <!-- TEMPLATE DA RESPOSTA -->
-        <button class="answer-template-hide">
+        <button class="answer-template hide">
             <span class="btn-letter">a</span> 
             <span class="question-answer">m</span>
         </button>

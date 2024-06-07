@@ -1,3 +1,165 @@
-h1 {
-    color: red
+/* GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
 }
+
+/* Quando usa (box-sizing: border-box), as propriedades (width) e (height) incluem o conteúdo, o (padding) e a (borda). O tamanho total do elemento será exatamente o que for definido em (width) e (height).*/
+
+body {
+    background-color: #242940;
+    color: #FFF;
+}
+
+.hide {
+    display: none !important;
+}
+
+#main-title {
+    padding: 40px 0;
+    text-align: center; /* alinha o texto ao centro -> horizontal */
+    background-color: #2D425A;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+/* SCORE CONTAINER */
+#score-container {
+    background-color: #CDDDE8;
+    color: #000;
+    text-align: center;
+    width: 300px;
+    margin: 50px auto; /* o elemento fica centralizado na pag */
+    padding: 25px;
+    border-radius: 20px;
+}
+
+#score-container p {
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+#score-container #display-score {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#correct-answers {
+    font-weight: bold;
+    color: #40B576;
+}
+
+#questions-qty {
+    font-weight: bold;
+    color: #075EA4;
+}
+
+#btn-restart {
+    width: 180px;
+    height: 50px;
+    background-color: #E78230;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+  
+#btn-restart:hover {
+    background-color: transparent;
+    border-color: #E78230;
+    color: #E78230;
+}
+
+/* QUIZZ CONTAINER */
+#quizz-container {
+    width: 500px;
+    margin: 50px auto;
+    border: 1px solid #CDDDE8;
+    padding: 25px; /* espaçamento interno */
+    border-radius: 25px;
+}
+
+#questions {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+#question-number {
+    font-weight: bold;
+}
+
+#answers-box button {
+    display: flex;
+    align-items: center; /* alinha os itens ao centro -> vertical */
+    margin: 15px 0;
+    width: 300px; /* largura de cada botão de alternativa */
+    height: 50px; /* altura de cada botão de alternativa */
+    border-radius: 25px;
+    background-color: #CDDDE8;
+    border: 2px solid transparent;
+    text-align: left;
+    padding-left: 5px; /* afasta o texto da borda do elemento */
+    color: #000;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#answers-box button:hover {
+    background-color: #E78230;
+    color: #FFF;
+}
+
+/* Alternativas A, B, C, D */
+#answers-box .btn-letter {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #E78230;
+    color: #FFF;
+    border-radius: 50%;
+    line-height: 40px; /* o texto fica alinhado ao círculo */
+    text-align: center;
+    text-transform: uppercase;
+    flex: 1 1 0; /* cresce e diminui de forma igual aos outros elementos que tem flex */
+    max-width: 40px;
+}
+
+.question-answer {
+    flex: 1 1 0;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+#quizz-container .correct-answer,
+#quizz-container .correct-answer .btn-letter {
+  background-color: #40B576;
+  color: #FFF;
+}
+
+#quizz-container .wrong-answer,
+#quizz-container .wrong-answer .btn-letter {
+  background-color: #e62210;
+  color: #FFF;
+}
+
+/* RESPONSIVO */
+@media(max-width:450px) {
+    #quizz-container {
+      border: none;
+      width: 100%;
+    }
+
+    #answers-box button {
+        width: 100%;
+    }
+
+    #score-container {
+        width: 90%;
+    }
+} 
