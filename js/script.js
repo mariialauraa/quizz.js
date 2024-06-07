@@ -96,6 +96,34 @@ function createQuestion(i) {
 
     questionText.textContent = questions[i].question;
     questionNumber.textContent = i + 1
+
+    // Insere as alternativas
+    questions[i].answers.forEach(function(answer, i) {
+        // Cria o template do botão do quizz
+        const answerTemplate = document.querySelector(".answer-template").cloneNode(true)
+        const letterBtn = answerTemplate.querySelector(".btn-letter")
+        const answerText = answerTemplate.querySelector(".question-answer")
+
+        letterBtn.textContent = letters[i]
+        answerText.textContent = answer['answer']
+
+        answerTemplate.setAttribute("correct-answer", answer["correct"]);
+
+        // remover hide e template class
+        answerTemplate.classList.remove("hide")
+        answerTemplate.classList.remove("answer-template")
+
+        // inserir as alternativas na tela
+        answersBox.appendChild(answerTemplate)
+
+        // inserir evento de click no botão
+        answerTemplate.addEventListener("click", function() {
+            console.log(this)
+        })
+    })
+
+    // Incrementa o número da questão
+    actualQuestion++
 }
 
 // Inicialização
